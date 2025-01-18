@@ -97,7 +97,7 @@ For the shader properties used in this case, we can add the following tags befor
 ```
 where in \<Shader\>, **Name** is the shader name that is the heading in tutorial.shader; **AssetBundle** is the path of _data_prefab_000.unity3d_, which is the shader assetbundle; and **Asset** is the _Cube_ object using the material _mat.mat_ shadered by this shader;
 
-in \<Property\>, **Name** is the property name in tutorial.shader but without the prefix "_" as a private statement in the shader file; **Type** is the type of the property; **DefaultValue** is the parameter or asset name given to the property when loading the shader, such like "mask" referring to _mask.png_ in the texture assetbundle; and **DefaultValueAssetBundle** is assetbundle's path applied to a texture-typed property, such like _tutorial_shader/tutorial_shader/tex.unity3d_ containing mask.png.
+in \<Property\>, **Name** is the property name in tutorial.shader but without the prefix "_" as a private statement in the shader file; **Type** is the type of the property; **DefaultValue** is the parameter or asset name given to the property when loading the shader, such like "mask" referring to _mask.png_ in the texture assetbundle; and **DefaultValueAssetBundle** is assetbundle's path applied to a texture-typed property, such like _tutorial_shader/tutorial_shader/tex.unity3d_ containing mask.png in it.
 
 ![2025-01-18_201737](https://github.com/user-attachments/assets/a85e734c-6a04-442e-a31f-5f8099316701)
 
