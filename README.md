@@ -81,6 +81,54 @@ If your shader mod has no built-in textures to load, please jump to the next sec
 Now we refer to data_prefab_000.unity3d as the shader assetbundle, and tex.unity3d as the texture assetbundle.
 
 ## Adjust Manifest.xml
-MaterialEditor reads the relevant tags in a mod's manifest.xml when loading the mod. Those tags can let MaterialEditor load the designated shader, display on its tab the properties used in the shader, and load the default textures packed in assetbundle to the material. Anyway, we have to add this sort of tags into manifest.xml. The whole template for tags can be found on: https://github.com/IllusionMods/KK_Plugins/blob/master/Guides/Material%20Editor%20Guide/shader_manifest_template.xml
+MaterialEditor reads the relevant tags in a mod's **manifest.xml** when loading the mod. Those tags can let MaterialEditor load the designated shader, display on its tab the properties used in the shader, and load the default textures packed in assetbundle to the material. Anyway, we have to add this sort of tags into manifest.xml. The whole template for tags can be found on: https://github.com/IllusionMods/KK_Plugins/blob/master/Guides/Material%20Editor%20Guide/shader_manifest_template.xml
 
-For the shader properties used in this case, we can add these tags:
+For the shader properties used in this case, we can add the following tags before **</manifest>**:
+```xml
+<AI_MaterialEditor>
+  <Shader Name="Custom/tutorial" AssetBundle="tutorial_shader/tutorial_shader/data_prefab_000.unity3d" Asset="Cube" >
+    <Property Name="Color" Type="Color" DefaultValue="1,1,1,1" />
+    <Property Name="MainTex" Type="Texture" DefaultValue="mask" DefaultValueAssetBundle="tutorial_shader/tutorial_shader/tex.unity3d"/>
+    <Property Name="Glossiness" Type="Float" Range="0,1" DefaultValue="0.5" />
+    <Property Name="Metallic" Type="Float" Range="0,1" DefaultValue="0.5" />
+    <Property Name="CustomProperty" Type="Color" DefaultValue="1,1,1,1" />
+  </Shader>
+</AI_MaterialEditor>
+```
+where in <Shader>, Name is the shader name that is the heading in tutorial.shader; AssetBundle is the path of _data_prefab_000.unity3d_, which is the shader assetbundle; and Asset is the _Cube_ object using the material _mat.mat_ shadered by this shader;
+
+in <Property>, Name is the property name in tutorial.shader but without the prefix "_" as a private statement in the shader file; Type is the type of the property; DefaultValue is the parameter or asset name given to the property when loading the shader, such like "mask" referring to _mask.png_ in the texture assetbundle; and DefaultValueAssetBundle is assetbundle's path applied to a texture-typed property, such like _tutorial_shader/tutorial_shader/tex.unity3d_ containing mask.png.
+
+![2025-01-18_201737](https://github.com/user-attachments/assets/a85e734c-6a04-442e-a31f-5f8099316701)
+
+Please note that the tags <AI_MaterialEditor></AI_MaterialEditor> means what tags between them are only applied to AI-Shoujo. For making it apply to HS2, we need to add <HS2_MaterialEditor></HS2_MaterialEditor>, and duplicate the same tags from above into them. So the whole manifest.xml could seem to be:
+```xml
+<manifest schema-ver="1">
+  <guid>Tutorial Shader</guid>
+  <name>Tutorial Shader</name>
+  <version>0.0.1</version>
+  <author>Anonymous</author>
+  <description></description>
+  
+  <AI_MaterialEditor>
+    <Shader Name="Custom/tutorial" AssetBundle="tutorial_shader/tutorial_shader/data_prefab_000.unity3d" Asset="Cube" >
+    <Property Name="Color" Type="Color" DefaultValue="1,1,1,1" />
+    <Property Name="MainTex" Type="Texture" DefaultValue="mask" DefaultValueAssetBundle="tutorial_shader/tutorial_shader/tex.unity3d"/>
+    <Property Name="Glossiness" Type="Float" Range="0,1" DefaultValue="0.5" />
+    <Property Name="Metallic" Type="Float" Range="0,1" DefaultValue="0.5" />
+    <Property Name="CustomProperty" Type="Color" DefaultValue="1,1,1,1" />
+    </Shader>
+  </AI_MaterialEditor>
+  
+  <HS2_MaterialEditor>
+    <Shader Name="Custom/tutorial" AssetBundle="tutorial_shader/tutorial_shader/data_prefab_000.unity3d" Asset="Cube" >
+    <Property Name="Color" Type="Color" DefaultValue="1,1,1,1" />
+    <Property Name="MainTex" Type="Texture" DefaultValue="mask" DefaultValueAssetBundle="tutorial_shader/tutorial_shader/tex.unity3d"/>
+    <Property Name="Glossiness" Type="Float" Range="0,1" DefaultValue="0.5" />
+    <Property Name="Metallic" Type="Float" Range="0,1" DefaultValue="0.5" />
+    <Property Name="CustomProperty" Type="Color" DefaultValue="1,1,1,1" />
+    </Shader>
+  </HS2_MaterialEditor>
+
+</manifest>
+```
