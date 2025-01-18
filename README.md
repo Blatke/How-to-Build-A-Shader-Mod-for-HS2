@@ -1,4 +1,4 @@
-# How to Build A Shader Mod for HS2
+![image](https://github.com/user-attachments/assets/6e69b233-8bae-4b95-8985-eb9bbcad5c85)# How to Build A Shader Mod for HS2
 A shader mod in HS2 could be understood as a mod letting the materials of objects provided by other mods show a different effect such like changing tint color, texture, bump, transparency, glossiness, metallic, emission, or even some geometrical performance. This kind of shader mods are always in format of .zipmod file installed in HS2 (as well as in AI-Shoujo) and can be displayed and loaded on MaterialEditor tab.
 
 Commonly, a custom shader used in a custom mod is only applied to this mod, only shown on MaterialEditor tab when this mod's objects are selected, and could not be applied in other mods. For getting a shader be used among various mods and be displayed corresponding properties (understood as the options) on MaterialEditor tab, shader mod is needed, and so is modding it.
@@ -52,11 +52,35 @@ If you are using **[hooh's Modding Tool](https://hooh-hooah.github.io/#/README)*
 
 Now you get the assetbundle. But don't remove the .zipmod file, we still need it.
 
-## Transport Stuff
-Create a new folder named _abdata_, then inside it create another new folder, name it _chara_. Then drop the assetbundle file you got, in this case _data_prefab_000.unity3d_ into the folder abdata/chara.
+## Transfer Textures
+If you want your shader mod to use its default textures when loading it into a material on MaterialEditor, you have to transfer the textures packed in the assetbundle to another assetbundle, and separately referred to them in manifest.xml. Otherwise, the textures will never be loaded along with the shader. As addressed by Hanmen, if a texture is used in the bundle material, it gets unavailable for MaterialEditor. Perhaps it's a issue in MaterialEditor, but at present we have to adopt to it. 
+
+If your shader mod has no built-in textures to load, please jump to the next section. But if yours does, please follow these steps:
+
+1. Create a new folder named _abdata_, then inside it create another new folder, name it _chara_. Then drop the assetbundle file you got, in this case _data_prefab_000.unity3d_ into the folder abdata/chara.
 
 ![image](https://github.com/user-attachments/assets/75262d60-c111-49ac-9bb0-815a083a8ecd)
 
-Use **[SB3UtilityGUI](https://gitea.com/enimaroah/Sb3UGS/releases)** to open it. Why we created these folders above is to meet the requirements by SB3UtilityGUI.
+2. Use **[SB3UtilityGUI](https://gitea.com/enimaroah/Sb3UGS/releases)** to open it, and double click it to view its content. Why we created these folders above is to meet the requirements by SB3UtilityGUI.
 
 ![image](https://github.com/user-attachments/assets/64619f2c-d29e-4bb4-8df7-d0a1686509d0)
+
+3. Use an almost empty assetbundle as the target file to which the textures are about to be transferred from the assetbundle you got. Put it also in abdata/chara. This "empty" assetbundle can be found as a template on: https://github.com/Blatke/How-to-Build-A-Shader-Mod-for-HS2/blob/main/Examples/tex.unity3d
+4. Drag and drop the "empty" assetbundle, for instance _tex.unity3d_, into SB3UtilityGUI. Then double click it to view its content structure.
+
+![image](https://github.com/user-attachments/assets/ce16d4c8-b418-4df1-b98a-43e8201dfd5c)
+
+5. Drag the texture, _mask.png_, in the data_prefab_000.unity3d and drop it into tex.unity3d to complete the transfer. Then save tex.unity3d.
+
+![image](https://github.com/user-attachments/assets/56dd16f1-4a26-4eed-bb2e-6695c20846bb)
+
+6. Compress tex.unity3d into the .zipmod file, put it beside the original assetbundle, data_prefab_000.unity3d.
+
+![image](https://github.com/user-attachments/assets/f82564db-b29a-4593-a665-ef09f89830d6)
+
+Now we refer to data_prefab_000.unity3d as the shader assetbundle, and tex.unity3d as the texture assetbundle.
+
+## Adjust Manifest.xml
+MaterialEditor reads the relevant tags in a mod's manifest.xml when loading the mod. Those tags can let MaterialEditor load the designated shader, display on its tab the properties used in the shader, and load the default textures packed in assetbundle to the material. Anyway, we have to add this sort of tags into manifest.xml. The whole template for tags can be found on: https://github.com/IllusionMods/KK_Plugins/blob/master/Guides/Material%20Editor%20Guide/shader_manifest_template.xml
+
+For the shader properties used in this case, we can add these tags:
