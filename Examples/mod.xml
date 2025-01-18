@@ -1,0 +1,20 @@
+<packer>
+  <bundles>
+    <folder auto-path="prefabs" from="prefabs" filter=".+?\.prefab" />
+  </bundles>
+  <build>
+    <list type="bigcategory">
+      <item id="20250118" name="BigCategory" />
+    </list>
+    <list type="midcategory">
+      <item big-category="20250118" id="20250118" name="MidCategory" />
+    </list>
+    <list type="studioitem">
+    </list>
+  </build>
+  <guid>Tutorial Shader</guid>
+  <name>Tutorial Shader</name>
+  <version>0.0.1</version>
+  <author>Anonymous</author>
+  <description></description>
+</packer>
