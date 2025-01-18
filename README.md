@@ -13,7 +13,7 @@ I would like to give special appreciation to [Hanmen](https://www.patreon.com/c/
 
 I also thank kky-is, [Pizdatyi](https://www.pixiv.net/users/86387918), [Getdowncrazy](https://www.patreon.com/c/realillusionGDC/), [enimaroah](https://github.com/enimaroah-cubic/Sb3UGS/wiki) and ElusiveCake, who spent time in kindly replying to my questions about shader modding, and thus have brought me with enlightenment.
 
-## Preparation of Assetbundle
+## Prepare the Assetbundle
 The first step is to get an assetbundle, in format of .unity3d, in which there has to be gameobjects, textures, materials, compiled shaders and other stuff packed in it: 
 
 In Unity Editor **2018.4.11f**, I created a shader file, namely _tutorial.shader_ and with the title "_Custom/tutorial_", and a material, namely _mat.mat_, in Project window. 
@@ -38,10 +38,25 @@ I assigned Albedo (_MainTex) to a custom texture namely mask.png, and created a 
 
 Now, build these stuff into an assetbundle. If you're using [Joan6694's method](https://mega.nz/folder/VlpAQZ7S#Q4x1zu3OlDSuuS_x-flqbA), I have no more things in this section to give you, and please move to the next section. 
 
-If you are using [hooh's Modding Tool](https://hooh-hooah.github.io/#/README), you can do what you always do for modding a studio item:
+If you are using **[hooh's Modding Tool](https://hooh-hooah.github.io/#/README)**, you can do what you always do for modding a studio item:
 
 1. Create the prefab of the **Cube** in the created folder namely _prefabs_.
 2. Create a **mod.xml** (mod.sxml) outside the _prefabs_ folder but without giving any tags between <list type="studioitem"></list>. Check the mod.xml as a template on: https://github.com/Blatke/How-to-Build-A-Shader-Mod-for-HS2/blob/main/Examples/mod.xml
-3. Press the Build button on the window of hooh tools to build the mod. It builds everything in the _prefabs_ folder as well as eveything referred by these prefabs into an assetbundle namely _data_prefab_000.unity3d_, and packs it with a generated _manifest.xml_ file (and other lists) into a .zipmod file.
+3. Press the Build button on the window of hooh tools to build the mod. It builds everything in the _prefabs_ folder as well as eveything referred by these prefabs into an assetbundle namely _data_prefab_000.unity3d_, and packs it with a generated _manifest.xml_ file (and other lists) into a .zipmod file. For instance, mine is named _Tutorial_Shader.zipmod_.
 
 ![image](https://github.com/user-attachments/assets/687a98c3-5260-481c-ac13-30a7c8ddb2dd)
+
+4. Use some uncompression software to open this .zipmod file, and uncompress the data_prefab_000.unity3d the assetbundle file to your desktop or somewhere else.
+
+![image](https://github.com/user-attachments/assets/4207bc4b-8f13-4f93-8977-cf373fe10643)
+
+Now you get the assetbundle. But don't remove the .zipmod file, we still need it.
+
+## Transport Stuff
+Create a new folder named _abdata_, then inside it create another new folder, name it _chara_. Then drop the assetbundle file you got, in this case _data_prefab_000.unity3d_ into the folder abdata/chara.
+
+![image](https://github.com/user-attachments/assets/75262d60-c111-49ac-9bb0-815a083a8ecd)
+
+Use **[SB3UtilityGUI](https://gitea.com/enimaroah/Sb3UGS/releases)** to open it. Why we created these folders above is to meet the requirements by SB3UtilityGUI.
+
+![image](https://github.com/user-attachments/assets/64619f2c-d29e-4bb4-8df7-d0a1686509d0)
