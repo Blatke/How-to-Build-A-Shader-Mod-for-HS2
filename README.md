@@ -24,9 +24,24 @@ Drag and drop tutorial.shader into mat.mat, so the latter is now adopt tutorial.
 
 ![image](https://github.com/user-attachments/assets/90c1b120-78d0-47e8-a940-85bdba647871)
 
-Besides the properties given by default, I added a custom property in type of color, __CustomProperty_ (with the display name of _Custom Property_). In this shader, _CustomProperty will blend color with _Color, like Red(1,0,0) * Blue(0,0,1) = Black(0,0,0). This shader file can be found on 
+Besides the properties given by default, I added a custom property in type of color, __CustomProperty_ (with the display name of _Custom Property_). In this shader, _CustomProperty will blend color with _Color, such like Red(1,0,0) * Blue(0,0,1) = Black(0,0,0). This shader file can be found on the [Examples](https://github.com/Blatke/How-to-Build-A-Shader-Mod-for-HS2/tree/main/Examples) folder.
 
 ![image](https://github.com/user-attachments/assets/765e0c70-f8ba-4604-b4df-c96c17972bf5)
 
 ![image](https://github.com/user-attachments/assets/7d9a8368-10ec-4121-8901-45ef7ef1b781)
 
+I assigned Albedo (_MainTex) to a custom texture namely mask.png, and created a **cube** in the scene, then drag and drop the material to it.
+
+![image](https://github.com/user-attachments/assets/1b8d50e7-116e-4e11-a444-6aee0573f215)
+
+![image](https://github.com/user-attachments/assets/92778ddb-f8bb-4a9d-a27b-b55163e0ff43)
+
+Now, build these stuff into an assetbundle. If you're using [Joan6694's method](https://mega.nz/folder/VlpAQZ7S#Q4x1zu3OlDSuuS_x-flqbA), I have no more things in this section to give you, and please move to the next section. 
+
+If you are using [hooh's Modding Tool](https://hooh-hooah.github.io/#/README), you can do what you always do for modding a studio item:
+
+1. Create the prefab of the **Cube** in the created folder namely _prefabs_.
+2. Create a **mod.xml** (mod.sxml) outside the _prefabs_ folder but without giving any tags between <list type="studioitem"></list>. Check the mod.xml as a template on: https://github.com/Blatke/How-to-Build-A-Shader-Mod-for-HS2/blob/main/Examples/mod.xml
+3. Press the Build button on the window of hooh tools to build the mod. It builds everything in the _prefabs_ folder as well as eveything referred by these prefabs into an assetbundle namely _data_prefab_000.unity3d_, and packs it with a generated _manifest.xml_ file (and other lists) into a .zipmod file.
+
+![image](https://github.com/user-attachments/assets/687a98c3-5260-481c-ac13-30a7c8ddb2dd)
