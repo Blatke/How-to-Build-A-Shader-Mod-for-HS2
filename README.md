@@ -153,6 +153,7 @@ When you have tens of properties in a shader file, it's gonna be a nightmare for
 ![image](https://github.com/user-attachments/assets/903691e9-e563-4d09-8f9e-11f8ce94197c)
 
 3. For converting **float** properties, copy and paste the following RegEx and tag respectively into the finding box and replacing box:
+
 Copy to Finding Box:
 ```Regex
 _([^ ]+)[ ]*\([^,]+,[ ]*Range\(([\-0-9,. ]+)\)[^0-9]+([0-9.\-]+)
@@ -164,6 +165,7 @@ Copy to Replacing Box:
 Then replace all.
 
 4. For converting **color** properties, copy and paste the following RegEx and tag respectively into the finding box and replacing box:
+
 Copy to Finding Box:
 ```Regex
 _([^ ]+)[ ]*\([^,]+,[ ]*Color\)[^\(]+\(([0-9., ]+)\)
@@ -175,6 +177,7 @@ Copy to Replacing Box:
 Then replace all.
 
 5. For converting **texture** properties, copy and paste the following RegEx and tag respectively into the finding box and replacing box:
+
 Copy to Finding Box:
 ```Regex
 _([^ ]+)[ ]*\([^,]+,[ ]*2D\)[^\n]+
