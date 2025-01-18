@@ -9,9 +9,9 @@ This tutorial is to give a brief introduction to <ins>the modders who are at lea
 > In this tutorial, I will not go through with how to build a common mod, such as studio item, from scratch. If you're a newbie in modding studio items, especially by using [hooh's Modding Tool](https://hooh-hooah.github.io/#/README), it suggests to check my other tutorial (available in both English and Chinese languages) on: https://www.blatke.cc/index.html#tutorials.
 
 ## Acknowledgement
-I would like to give special appreciation to [Hanmen](https://www.patreon.com/c/hanmen), who directly and generously helped me with modding this shader to let MaterialEditor in HS2 and AIS successfully load it.
+I would like to give special appreciation to **[Hanmen](https://www.patreon.com/c/hanmen)**, who directly and generously helped me with modding this shader to let MaterialEditor in HS2 and AIS successfully load it.
 
-I also thank kky-is, [Pizdatyi](https://www.pixiv.net/users/86387918), [Getdowncrazy](https://www.patreon.com/c/realillusionGDC/), [enimaroah](https://github.com/enimaroah-cubic/Sb3UGS/wiki) and ElusiveCake, who spent time in kindly replying to my questions about shader modding, and thus have brought me with enlightenment.
+I also thank **kky-is**, **[Pizdatyi](https://www.pixiv.net/users/86387918)**, **[Getdowncrazy](https://www.patreon.com/c/realillusionGDC/)**, **[enimaroah](https://github.com/enimaroah-cubic/Sb3UGS/wiki)** and **ElusiveCake**, who spent time in kindly replying to my questions about shader modding, and thus have brought me with enlightenment.
 
 ## Prepare the Assetbundle
 The first step is to get an assetbundle, in format of .unity3d, in which there has to be gameobjects, textures, materials, compiled shaders and other stuff packed in it: 
