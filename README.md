@@ -101,7 +101,7 @@ in <Property>, Name is the property name in tutorial.shader but without the pref
 
 ![2025-01-18_201737](https://github.com/user-attachments/assets/a85e734c-6a04-442e-a31f-5f8099316701)
 
-Please note that the tags <AI_MaterialEditor></AI_MaterialEditor> means what tags between them are only applied to AI-Shoujo. For making it apply to HS2, we need to add <HS2_MaterialEditor></HS2_MaterialEditor>, and duplicate the same tags from above into them. So the whole manifest.xml could seem to be:
+Please note that the tags _<AI_MaterialEditor></AI_MaterialEditor>_ means what tags between them are only applied to AI-Shoujo. For making it apply to HS2, we need to add _<HS2_MaterialEditor></HS2_MaterialEditor>_, and duplicate the same tags from above into them. So the whole manifest.xml could seem to be:
 ```xml
 <manifest schema-ver="1">
   <guid>Tutorial Shader</guid>
@@ -132,3 +132,58 @@ Please note that the tags <AI_MaterialEditor></AI_MaterialEditor> means what tag
 
 </manifest>
 ```
+
+Finally, save the manifest.xml into the .zipmod file to complete the whole process.
+
+The _manifest.xml_ and _Tutorial_Shader.zipmod_ could be found in the [Examples](https://github.com/Blatke/How-to-Build-A-Shader-Mod-for-HS2/blob/main/Examples/) folder.
+
+After installing this mod in the game, and loading the shader into an item such like a capsult in Studio, the tab of MaterialEditor and the texture are shown as below:
+
+![2025-01-18_205313](https://github.com/user-attachments/assets/ca5d90e2-2dc1-4693-9de4-8d7e8c230d41)
+
+## Supplement
+### Too many properties to add tags?
+When you have tens of properties in a shader file, it's gonna be a nightmare for making each of them a tag to add in manifest.xml. If you use Visual Code or some other coding software that supports RegEx ([Regular Expression](https://en.wikipedia.org/wiki/Regular_expression)), you can do the following steps to batch convert the properties in a shader file into MaterialEditor-related tags:
+1. Copy the properties to a new file.
+
+![image](https://github.com/user-attachments/assets/9ced5834-fa15-4ff8-9e74-fcf24f9bf620)
+
+2. Press hotkey Ctrl + F to call the tab for finding and replacing. Enable the RegEx function.
+
+![image](https://github.com/user-attachments/assets/903691e9-e563-4d09-8f9e-11f8ce94197c)
+
+3. For converting **float** properties, copy and paste the following RegEx and tag respectively into the finding box and replacing box:
+Copy to Finding Box:
+```Regex
+_([^ ]+)[ ]*\([^,]+,[ ]*Range\(([\-0-9,. ]+)\)[^0-9]+([0-9.\-]+)
+```
+Copy to Replacing Box:
+```xml
+<Property Name="$1" Type="Float" Range="$2" DefaultValue="$3" />
+```
+Then replace all.
+
+4. For converting **color** properties, copy and paste the following RegEx and tag respectively into the finding box and replacing box:
+Copy to Finding Box:
+```Regex
+_([^ ]+)[ ]*\([^,]+,[ ]*Color\)[^\(]+\(([0-9., ]+)\)
+```
+Copy to Replacing Box:
+```xml
+<Property Name="$1" Type="Color" DefaultValue="$2" />
+```
+Then replace all.
+
+5. For converting **texture** properties, copy and paste the following RegEx and tag respectively into the finding box and replacing box:
+Copy to Finding Box:
+```Regex
+_([^ ]+)[ ]*\([^,]+,[ ]*2D\)[^\n]+
+```
+Copy to Replacing Box:
+```xml
+<Property Name="$1" Type="Texture" DefaultValue="" DefaultValueAssetBundle=""/>
+```
+Then replace all.
+
+![image](https://github.com/user-attachments/assets/79dc4f41-1b8d-4352-a1f1-c49f815b526a)
+
