@@ -53,7 +53,7 @@ If you are using **[hooh's Modding Tool](https://hooh-hooah.github.io/#/README)*
 Now you get the assetbundle. But don't remove the .zipmod file, we still need it.
 
 ## Transfer Textures
-If you want your shader mod to use its default textures when loading it into a material on MaterialEditor, you have to transfer the textures packed in the assetbundle to another assetbundle, and separately referred to them in manifest.xml. Otherwise, the textures will never be loaded along with the shader. As addressed by Hanmen, if a texture is used in the bundle material, it gets unavailable for MaterialEditor. Perhaps it's a issue in MaterialEditor, but at present we have to adopt to it. 
+If you want your shader mod to use its default textures when loading it into a material on MaterialEditor, you have to transfer the textures packed in the assetbundle to another assetbundle, and separately referred to them in manifest.xml. Otherwise, the textures will never be loaded along with the shader. As addressed by Hanmen, if a texture is used in the bundle material, it gets unavailable for MaterialEditor. Perhaps it's an issue in MaterialEditor, but at present we have to adopt to it. 
 
 If your shader mod has no built-in textures to load, please jump to the next section. But if yours does, please follow these steps:
 
