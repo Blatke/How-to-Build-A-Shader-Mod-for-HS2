@@ -16,7 +16,7 @@ I also thank **kky-is**, **[Pizdatyi](https://www.pixiv.net/users/86387918)**, *
 ## Prepare the Assetbundle
 The first step is to get an assetbundle, in format of .unity3d, in which there has to be gameobjects, textures, materials, compiled shaders and other stuff packed in it: 
 
-In Unity Editor **2018.4.11f**, I created a shader file, namely _tutorial.shader_ and with the title "_Custom/tutorial_", and a material, namely _mat.mat_, in Project window. 
+In Unity Editor **2018.4.11f**, I created a shader file, namely _tutorial.shader_ and with the title "_Custom/tutorial_", and a material, namely _mat.mat_, in Project window. So we are going to build a shader mod based on this tutorial.shader.
 
 ![image](https://github.com/user-attachments/assets/33888cbb-7e1b-4c61-abd0-ff9e0628e4f9)
 
