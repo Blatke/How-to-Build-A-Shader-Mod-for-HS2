@@ -7,7 +7,7 @@ HS2中的着色器mod（Shader Mod）可以被理解为一种让其他mod提供�
 本教程旨在为<ins>那些至少对HS2工作室物品有经验的modders</ins>提供简要介绍，使之了解如何<ins>基于Unity中已有的着色器</ins>来构建着色器mod。
 
 > [!TIP]
-> 在本教程中，我不会从头开始讲述如何构建一个通用mod，如工作室物品（Studio Item）。如果你是一个工作室物品的新手modder，尤其是[hooh Modding Tool](https://hooh-hooah.github.io/#/README)的使用者，建议查看我的其他教程（有英文和中文两种版本）：https://www.blatke.cc/index.html#tutorials。
+> 在本教程中，我不会从头开始讲述如何构建一个通用mod，如工作室物品（Studio Item）。如果你是一个工作室物品的新手modder，尤其是[hooh Modding Tool](https://hooh-hooah.github.io/#/README)的使用者，建议查看我的其他教程（有英文和中文两种版本）：https://www.blatke.cc/index.html#tutorials
 
 ## 致谢
 
