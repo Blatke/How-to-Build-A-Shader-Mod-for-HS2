@@ -137,7 +137,7 @@ Finally, save the manifest.xml into the .zipmod file to complete the whole proce
 
 The _manifest.xml_ and _Tutorial_Shader.zipmod_ could be found in the [Examples](https://github.com/Blatke/How-to-Build-A-Shader-Mod-for-HS2/blob/main/Examples/) folder.
 
-After installing this mod in the game, and loading the shader into an item such like a capsult in Studio, the tab of MaterialEditor and the texture are shown as below:
+After installing this mod in the game, and loading the shader into an item such like a capsule in Studio, the tab of MaterialEditor and the texture are shown as below:
 
 ![2025-01-18_205313](https://github.com/user-attachments/assets/ca5d90e2-2dc1-4693-9de4-8d7e8c230d41)
 
