@@ -13,6 +13,13 @@ I would like to give special appreciation to **[Hanmen](https://www.patreon.com/
 
 I also thank **kky-is**, **[Pizdatyi](https://www.pixiv.net/users/86387918)**, **[Getdowncrazy](https://www.patreon.com/c/realillusionGDC/)**, **[enimaroah](https://github.com/enimaroah-cubic/Sb3UGS/wiki)** and **ElusiveCake**, who spent time in kindly replying to my questions about shader modding, and thus have brought me with enlightenment.
 
+## Summary
+In short, the process of modding a shader includes:
+
+1. Build a .zipmod file with packing the object using the material shadered by your designated shader into an assetbundle in it.
+2. If you want to let your future shader mod load default textures when loading the shader on MaterialEditor tab, creating a new assetbundle with putting textures into it and packing it into the .zipmod file are neccessary.
+3. Add MaterialEditor-recognized tags with referring to the path(s) of the assetbundle(s) into the manifest.xml script in the .zipmod file.
+
 ## Prepare the Assetbundle
 The first step is to get an assetbundle, in format of .unity3d, in which there has to be gameobjects, textures, materials, compiled shaders and other stuff packed in it: 
 
@@ -95,9 +102,20 @@ For the shader properties used in this case, we can add the following tags befor
   </Shader>
 </AI_MaterialEditor>
 ```
-where in \<Shader\>, **Name** is the shader name that is the heading in tutorial.shader; **AssetBundle** is the path of _data_prefab_000.unity3d_, which is the shader assetbundle; and **Asset** is the _Cube_ object using the material _mat.mat_ shadered by this shader;
+where in \<Shader\>, **Name** is the shader name that is the heading in _tutorial.shader_; **AssetBundle** is the path of _data_prefab_000.unity3d_, which is the shader assetbundle; and **Asset** is the _Cube_ object using the material _mat.mat_ shadered by this shader;
 
-in \<Property\>, **Name** is the property name in tutorial.shader but without the prefix "_" as a private statement in the shader file; **Type** is the type of the property; **DefaultValue** is the parameter or asset name given to the property when loading the shader, such like "mask" referring to _mask.png_ in the texture assetbundle; and **DefaultValueAssetBundle** is assetbundle's path applied to a texture-typed property, such like _tutorial_shader/tutorial_shader/tex.unity3d_ containing mask.png in it.
+and in \<Property\>, **Name** is the property name in tutorial.shader but without the prefix "_" as a private statement in the shader file; **Type** is the type of the property; **DefaultValue** is the parameter or asset name given to the property when loading the shader, such like "mask" referring to _mask.png_ in the texture assetbundle; and **DefaultValueAssetBundle** is assetbundle's path applied to a texture-typed property, such like _tutorial_shader/tutorial_shader/tex.unity3d_ containing mask.png in it.
+
+> [!NOTE]
+> All the paths referred by MaterialEditor tags have to begin after **_abdata/_**. For instance, the shader assetbundle in Tutorial_Shader.zipmod has the actual path, _abdata/tutorial_shader/tutorial_shader/data_prefab_000.unity3d_, which you can see when you open the .zipmod file in uncompression software:
+> 
+> ![image](https://github.com/user-attachments/assets/5d48288c-2c75-4b4e-9682-ec4375a50f4a)
+>
+> The path you have to fill in the attribute, such like in **AssetBundle** or **DefaultValueAssetBundle**, has to be **_tutorial_shader/tutorial_shader/data_prefab_000.unity3d_**, and without the _abdata/_.
+>
+> Also, the slash symbol "**/**" used in the path should not be written as a backslash "**\\**".
+
+The relation between the properties in the .shader file and the tags in the manifest.xml are drawn like this:
 
 ![2025-01-18_201737](https://github.com/user-attachments/assets/a85e734c-6a04-442e-a31f-5f8099316701)
 
