@@ -31,7 +31,7 @@ HS2中的着色器mod（Shader Mod）可以被理解为一种让其他mod提供�
 
 第一步是获得一个.unity3d格式的资产包，其中必须包含游戏对象、贴图、材质、编译的着色器和其他内容：
 
-在Unity编辑器**2018.4.11f**中，我在项目窗口中创建了一个着色器文件，名为 _tutorial.shader_，抬头标题为“_Custom/tutorial_”，以及一个材质，名为 _mat.mat_。由此，我们将基于这个tutorial.shader构建一个着色器mod。
+在Unity Editor **2018.4.11f**中，我在项目窗口中创建了一个着色器文件，名为 _tutorial.shader_，抬头标题为“_Custom/tutorial_”，以及一个材质，名为 _mat.mat_。由此，我们将基于这个tutorial.shader构建一个着色器mod。
 
 ![image](https://github.com/user-attachments/assets/33888cbb-7e1b-4c61-abd0-ff9e0628e4f9)
 
