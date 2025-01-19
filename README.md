@@ -1,5 +1,6 @@
 # How to Build A Shader Mod for HS2
-For Chinese version (中文版), please check [**this**](https://github.com/Blatke/How-to-Build-A-Shader-Mod-for-HS2/blob/main/Chinese%20ver.md).
+> [!TIP]
+> For Chinese version (中文版), please check [**this**](https://github.com/Blatke/How-to-Build-A-Shader-Mod-for-HS2/blob/main/Chinese%20ver.md).
 
 A shader mod in HS2 could be understood as a mod letting the materials of objects provided by other mods show a different effect such like changing tint color, texture, bump, transparency, glossiness, metallic, emission, or even some geometrical performance. This kind of shader mods are always in format of .zipmod file installed in HS2 (as well as in AI-Shoujo) and can be displayed and loaded on MaterialEditor tab.
 
@@ -7,7 +8,7 @@ Commonly, a custom shader used in a custom mod is only applied to this mod, only
 
 This tutorial is to give a brief introduction to <ins>the modders who are experienced in modding for at least HS2 studio items</ins>, letting them know the rough knowledge on building a shader mod <ins>based on the shader they already have in Unity</ins>. 
 
-> [!TIP]
+> [!IMPORTANT]
 > In this tutorial, I will not go through with how to build a common mod, such as studio item, from scratch. If you're a newbie in modding studio items, especially by using [hooh's Modding Tool](https://hooh-hooah.github.io/#/README), it suggests to check my other tutorial (available in both English and Chinese languages) on: https://www.blatke.cc/index.html#tutorials.
 
 ## Acknowledgement
