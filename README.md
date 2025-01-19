@@ -16,7 +16,7 @@ I also thank **kky-is**, **[Pizdatyi](https://www.pixiv.net/users/86387918)**, *
 ## Summary
 In short, the process of modding a shader includes:
 
-1. Build a .zipmod file with packing the object using the material shadered by your designated shader into an assetbundle in it.
+1. Build a .zipmod file with packing the object using the material shadered by your designated shader into a .unity3d assetbundle in it.
 2. If you want to let your future shader mod load default textures when loading the shader on MaterialEditor tab, creating a new assetbundle with putting textures into it and packing it into the .zipmod file are neccessary.
 3. Add MaterialEditor-recognized tags with referring to the path(s) of the assetbundle(s) into the manifest.xml script in the .zipmod file.
 
