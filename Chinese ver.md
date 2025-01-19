@@ -1,4 +1,6 @@
 # 如何为HS2制作着色器MOD
+> [!TIP]
+> For the English version, please check [**this**](https://github.com/Blatke/How-to-Build-A-Shader-Mod-for-HS2/blob/main/README.md).
 
 HS2中的着色器mod（Shader Mod）可以被理解为一种让其他mod提供的物体材质显示不同效果的mod，例如改变色调、贴图、凹凸、透明度、光泽度、金属、发光，甚至一些几何表现。这种着色器mod采用.zipmod文件格式，安装在HS2（以及AI少女）中，可以在MaterialEditor（材质编辑器）选项卡上显示和加载。
 
@@ -6,7 +8,7 @@ HS2中的着色器mod（Shader Mod）可以被理解为一种让其他mod提供�
 
 本教程旨在为<ins>那些至少对HS2工作室物品有经验的modders</ins>提供简要介绍，使之了解如何<ins>基于Unity中已有的着色器</ins>来构建着色器mod。
 
-> [!TIP]
+> [!IMPORTANT]
 > 在本教程中，我不会从头开始讲述如何构建一个通用mod，如工作室物品（Studio Item）。如果你是一个工作室物品的新手modder，尤其是[hooh Modding Tool](https://hooh-hooah.github.io/#/README)的使用者，建议查看我的其他教程（有英文和中文两种版本）：https://www.blatke.cc/index.html#tutorials
 
 ## 致谢
