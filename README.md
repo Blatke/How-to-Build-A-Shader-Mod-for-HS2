@@ -48,7 +48,7 @@ Now, build these stuff into an assetbundle. If you're using [Joan6694's method](
 If you are using **[hooh's Modding Tool](https://hooh-hooah.github.io/#/README)**, you can do what you always do for modding a studio item:
 
 1. Create the prefab of the **Cube** in the created folder namely _prefabs_.
-2. Create a **mod.xml** (mod.sxml) outside the _prefabs_ folder but without giving any tags between <list type="studioitem"></list>. Check the mod.xml as a template on: https://github.com/Blatke/How-to-Build-A-Shader-Mod-for-HS2/blob/main/Examples/mod.xml
+2. Create a **mod.xml** (mod.sxml) outside the _prefabs_ folder but without giving any tags between \<list type="studioitem"\>\</list\>. Check the mod.xml as a template on: https://github.com/Blatke/How-to-Build-A-Shader-Mod-for-HS2/blob/main/Examples/mod.xml
 3. Press the Build button on the window of hooh tools to build the mod. It builds everything in the _prefabs_ folder as well as eveything referred by these prefabs into an assetbundle namely _data_prefab_000.unity3d_, and packs it with a generated _manifest.xml_ file (and other lists) into a .zipmod file. For instance, mine is named _Tutorial_Shader.zipmod_.
 
 ![image](https://github.com/user-attachments/assets/687a98c3-5260-481c-ac13-30a7c8ddb2dd)
