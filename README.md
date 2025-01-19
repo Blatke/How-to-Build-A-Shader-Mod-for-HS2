@@ -1,6 +1,6 @@
 # How to Build A Shader Mod for HS2
 > [!TIP]
-> For Chinese version (中文版), please check [**this**](https://github.com/Blatke/How-to-Build-A-Shader-Mod-for-HS2/blob/main/Chinese%20ver.md).
+> For the Chinese version (中文版), please check [**this**](https://github.com/Blatke/How-to-Build-A-Shader-Mod-for-HS2/blob/main/Chinese%20ver.md).
 
 A shader mod in HS2 could be understood as a mod letting the materials of objects provided by other mods show a different effect such like changing tint color, texture, bump, transparency, glossiness, metallic, emission, or even some geometrical performance. This kind of shader mods are always in format of .zipmod file installed in HS2 (as well as in AI-Shoujo) and can be displayed and loaded on MaterialEditor tab.
 
