@@ -13,7 +13,7 @@ HS2中的着色器mod（Shader Mod）可以被理解为一种让其他mod提供�
 
 我要特别感谢[**Hanmen**](https://www.patreon.com/c/hanmen)，他直接而慷慨地为我的着色器mod制作提供帮助，让HS2和AIS中的MaterialEditor成功加载它。
 
-我还要感谢**kky-is**，[**Pizdatyi**](https://www.pixiv.net/users/86387918)、[**Getdowncrazy**](https://www.patreon.com/c/realillusionGDC/)、[**enimaroah**](https://github.com/enimaroah-cubic/Sb3UGS/wiki)以及**ElusiveCake**，他们花时间善意地回答了我关于着色器修改的问题，给我带来了启示。
+我还要感谢**kky-is**、[**Pizdatyi**](https://www.pixiv.net/users/86387918)、[**Getdowncrazy**](https://www.patreon.com/c/realillusionGDC/)、[**enimaroah**](https://github.com/enimaroah-cubic/Sb3UGS/wiki)以及**ElusiveCake**，他们花时间善意地回答了我关于着色器修改的问题，给我带来了启示。
 
 ## 摘要
 
@@ -77,7 +77,7 @@ HS2中的着色器mod（Shader Mod）可以被理解为一种让其他mod提供�
 
 ![image](https://github.com/user-attachments/assets/75262d60-c111-49ac-9bb0-815a083a8ecd)
 
-2.使用**[SB3UtilityGUI](https://gitea.com/enimaroah/Sb3UGS/releases)**打开它，然后双击它以查看其内容。我们之所以在上面创建这些文件夹，是为了满足SB3UtilityGUI的要求。
+2.使用[**SB3UtilityGUI**](https://gitea.com/enimaroah/Sb3UGS/releases)打开它，然后双击它以查看其内容。我们之所以在上面创建这些文件夹，是为了满足SB3UtilityGUI的要求。
 
 ![image](https://github.com/user-attachments/assets/64619f2c-d29e-4bb4-8df7-d0a1686509d0)
 
@@ -101,7 +101,7 @@ HS2中的着色器mod（Shader Mod）可以被理解为一种让其他mod提供�
 
 加载mod时，MaterialEditor会读取这个mod的**manifest.xml**中的相关标签（tags）。这些标签可以让MaterialEditor加载指定的着色器，在其选项卡上显示着色器中使用的属性，以及将资产包中打包的自带贴图加载到材质中。无论如何，我们必须将这种标签添加到manifest.xml中。有关标签的模板可以在以下网址中找到：https://github.com/IllusionMods/KK_Plugins/blob/master/Guides/Material%20Editor%20Guide/shader_manifest_template.xml
 
-对于本例中使用的着色器属性，我们可以在**\</manifest\>**之前添加如下标签：
+对于本例中使用的着色器属性，我们可以在 **\</manifest\>** 之前添加如下标签：
 
 ```xml
 <AI_MaterialEditor>
@@ -120,11 +120,11 @@ HS2中的着色器mod（Shader Mod）可以被理解为一种让其他mod提供�
 在\<Property\>中，**Name**是tutorial.shader中的属性名，只不过没有着色器文件中私有声明前缀“_”；**Type**是属性的类型；**DefaultValue**是加载着色器时赋予属性的默认参数或资源名称，例如这个“mask”值指的是引用了贴图资产包中的 _mask.png_ ；**DefaultValueAssetBundle**是应用于贴图类型属性的资产包路径，例如包含mask.png的_tutorial_shader/tutorial_shader/tex.unity3d。
 
 > [!NOTE]
-> MaterialEditor标签引用的所有路径必须在**_abdata/_**之后开始。例如，Tutorial_shader.zipmod中的着色器资产包实际路径是_abdata/tutorial_shader/tutorial_shader/data_prefab_000.unity3d_，你可以在解压缩软件中打开.zipmod文件时看到该路径：
+> MaterialEditor标签引用的所有路径必须在 **_abdata/_** 之后开始。例如，Tutorial_shader.zipmod中的着色器资产包实际路径是_abdata/tutorial_shader/tutorial_shader/data_prefab_000.unity3d_，你可以在解压缩软件中打开.zipmod文件时看到该路径：
 > 
 > ![image](https://github.com/user-attachments/assets/5d48288c-2c75-4b4e-9682-ec4375a50f4a)
 >
-> 你填写到属性（如**AssetBundle**或**DefaultValueAssetBundle**）里的路径必须写作：**_tutorial_shader/tutorial_shader/data_prefab_000.unity3d_**，不带_abdata/_。
+> 你填写到属性（如**AssetBundle**或**DefaultValueAssetBundle**）里的路径必须写作：**_tutorial_shader/tutorial_shader/data_prefab_000.unity3d_**，不带 _abdata/_ 。
 >
 >此外，路径中使用的斜杠符号“**/**”，不要写成反斜杠“**\\**”。
 
@@ -132,7 +132,7 @@ HS2中的着色器mod（Shader Mod）可以被理解为一种让其他mod提供�
 
 ![2025-01-18_201737](https://github.com/user-attachments/assets/a85e734c-6a04-442e-a31f-5f8099316701)
 
-请注意，这对标签_<AI_MaterialEditor></AI_MaterialEditor>_表示它们之间的标签仅适用于AI少女。为了将其使用于HS2，我们需要添加_<HS2_MaterialEditor></HS2_MaterialEditor>_标签对，并将上面的相同标签复制到其中。因此，整个manifest.xml应当是：
+请注意，这对标签 _<AI_MaterialEditor></AI_MaterialEditor>_ 表示它们之间的标签仅适用于AI少女。为了将其使用于HS2，我们需要添加 _<HS2_MaterialEditor></HS2_MaterialEditor>_ 标签对，并将上面的相同标签复制到其中。因此，整个manifest.xml应当是：
 
 ```xml
 <manifest schema-ver="1">
