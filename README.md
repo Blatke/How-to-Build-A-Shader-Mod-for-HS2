@@ -90,7 +90,7 @@ Now we refer to data_prefab_000.unity3d as the shader assetbundle, and tex.unity
 ## Adjust Manifest.xml
 MaterialEditor reads the relevant tags in a mod's **manifest.xml** when loading the mod. Those tags can let MaterialEditor load the designated shader, display on its tab the properties used in the shader, and load the default textures packed in assetbundle to the material. Anyway, we have to add this sort of tags into manifest.xml. The whole template for tags can be found on: https://github.com/IllusionMods/KK_Plugins/blob/master/Guides/Material%20Editor%20Guide/shader_manifest_template.xml
 
-For the shader properties used in this case, we can add the following tags before **</manifest>**:
+For the shader properties used in this case, we can add the following tags before **\</manifest\>**:
 ```xml
 <AI_MaterialEditor>
   <Shader Name="Custom/tutorial" AssetBundle="tutorial_shader/tutorial_shader/data_prefab_000.unity3d" Asset="Cube" >
