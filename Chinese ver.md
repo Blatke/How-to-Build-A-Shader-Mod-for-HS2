@@ -11,9 +11,9 @@ HS2中的着色器mod（Shader Mod）可以被理解为一种让其他mod提供�
 
 ## 致谢
 
-我要特别感谢**[Hanmen](https://www.patreon.com/c/hanmen)**，他直接而慷慨地为我的着色器mod制作提供帮助，让HS2和AIS中的MaterialEditor成功加载它。
+我要特别感谢[**Hanmen**](https://www.patreon.com/c/hanmen)，他直接而慷慨地为我的着色器mod制作提供帮助，让HS2和AIS中的MaterialEditor成功加载它。
 
-我还要感谢**kky-is**，**[Pizdatyi](https://www.pixiv.net/users/86387918)****[Getdowncrazy](https://www.patreon.com/c/realillusionGDC/)****[enimaroah](https://github.com/enimaroah-cubic/Sb3UGS/wiki)**以及**ElusiveCake**，他们花时间善意地回答了我关于着色器修改的问题，给我带来了启示。
+我还要感谢**kky-is**，[**Pizdatyi**](https://www.pixiv.net/users/86387918)、[**Getdowncrazy**](https://www.patreon.com/c/realillusionGDC/)、[**enimaroah**](https://github.com/enimaroah-cubic/Sb3UGS/wiki)以及**ElusiveCake**，他们花时间善意地回答了我关于着色器修改的问题，给我带来了启示。
 
 ## 摘要
 
@@ -51,11 +51,11 @@ HS2中的着色器mod（Shader Mod）可以被理解为一种让其他mod提供�
 
 现在，把这些东西做成一个资产包。如果你使用的是[Joan6694的方法](https://mega.nz/folder/VlpAQZ7S#Q4x1zu3OlDSuuS_x-flqbA)，那么这一节我就没有更多的东西要给你了，请转到下一节。
 
-如果你正在使用**[hooh的修改工具](https://hooh-hooah.github.io/# /README)**，你可以像往常一样制作工作室物品：
+如果你正在使用[**hooh Modding Tool**](https://hooh-hooah.github.io/#/README)，你可以像往常一样制作工作室物品：
 
 1.创建文件夹_prefabs_并在其中创建**Cube**的预制体（Prefab）。
 
-2.在_prefabs_文件夹外创建一个**mod.xml**（mod.sxml），但不要在\<list type=“studioitem”\>\</list\>之间添加任何标签。可在这里获取mod.xml模板：https://github.com/Blatke/How-to-Build-A-Shader-Mod-for-HS2/blob/main/Examples/mod.xml
+2.在_prefabs_文件夹外创建一个**mod.xml**（或mod.sxml），但不要在\<list type=“studioitem”\>\</list\>之间添加任何标签。可在这里获取mod.xml模板：https://github.com/Blatke/How-to-Build-A-Shader-Mod-for-HS2/blob/main/Examples/mod.xml
 
 3.按下hooh tools窗口上的Build按钮来制作mod。它将_prefabs_文件夹中的所有内容以及这些预制体引用的所有内容都放入一个资产包中，即_data_prefab_000.unity3d_，并将它跟一并生成的_manifest.xml_文件（和其他list文件）打包进.zipmod文件中。假设我们做成的mod名为_Tutorial_Shader.zipmod_。
 
