@@ -59,7 +59,7 @@ HS2中的着色器mod（Shader Mod）可以被理解为一种让其他mod提供�
 
 2.在 _prefabs_ 文件夹外创建一个**mod.xml**（或mod.sxml），但不要在\<list type=“studioitem”\>\</list\>之间添加任何标签。可在这里获取mod.xml模板：https://github.com/Blatke/How-to-Build-A-Shader-Mod-for-HS2/blob/main/Examples/mod.xml
 
-3.按下hooh tools窗口上的Build按钮来制作mod。它将 _prefabs_ 文件夹中的所有内容以及这些预制体引用的所有内容都放入一个资产包中，即_data_prefab_000.unity3d_，并将它跟一并生成的 _manifest.xml_ 文件（和其他list文件）打包进.zipmod文件中。假设我们做成的mod名为_Tutorial_Shader.zipmod_。
+3.按下hooh tools窗口上的Build按钮来制作mod。它将 _prefabs_ 文件夹中的所有内容以及这些预制体引用的所有内容都放入一个资产包中，即 _data_prefab_000.unity3d_ ，并将它跟一并生成的 _manifest.xml_ 文件（和其他list文件）打包进.zipmod文件中。假设我们做成的mod名为 _Tutorial_Shader.zipmod_ 。
 
 ![image](https://github.com/user-attachments/assets/687a98c3-5260-481c-ac13-30a7c8ddb2dd)
 
