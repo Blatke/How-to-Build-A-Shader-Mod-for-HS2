@@ -162,6 +162,12 @@ After installing this mod in the game, and loading the shader into an item such 
 
 ![2025-01-18_205313](https://github.com/user-attachments/assets/ca5d90e2-2dc1-4693-9de4-8d7e8c230d41)
 
+> [!CAUTION]
+> When a shader mod, such like Tutorial_Shader.zipmod having the shader namely "Custom/Tutorial", is installed in the Studio, it could be understood as MaterialEditor has registered this shader. Thus, every time the objects (clothes, accessories, studio items) with the materials using this shader, "Custom/Tutorial", are loaded in the scene, their materials are replaced with the duplicates of the material provided by the shader mod, Tutorial_Shader.zipmod. The value in each property in those materials are also transmitted to the duplicates.
+>
+> What have to be cautious are that:
+> - 
+
 ## Supplement
 ### Too many properties to add tags?
 When you have tens of properties in a shader file, it's gonna be a nightmare for making each of them a tag to add in manifest.xml. If you use Visual Code or some other coding software that supports RegEx ([Regular Expression](https://en.wikipedia.org/wiki/Regular_expression)), you can do the following steps to batch convert the properties in a shader file into MaterialEditor-related tags:
