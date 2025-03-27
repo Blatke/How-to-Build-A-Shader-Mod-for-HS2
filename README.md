@@ -163,10 +163,15 @@ After installing this mod in the game, and loading the shader into an item such 
 ![2025-01-18_205313](https://github.com/user-attachments/assets/ca5d90e2-2dc1-4693-9de4-8d7e8c230d41)
 
 > [!CAUTION]
-> When a shader mod, such like Tutorial_Shader.zipmod having the shader namely "Custom/Tutorial", is installed in the Studio, it could be understood as MaterialEditor has registered this shader. Thus, every time the objects (clothes, accessories, studio items) with the materials using this shader, "Custom/Tutorial", are loaded in the scene, their materials are replaced with the duplicates of the material provided by the shader mod, Tutorial_Shader.zipmod. The value in each property in those materials are also transmitted to the duplicates.
+> When a shader mod, such like Tutorial_Shader.zipmod having the shader namely "Custom/Tutorial", is installed in the Studio, it could be understood as MaterialEditor has registered this shader. Thus, every time the objects (clothes, accessories, studio items) with the materials using this shader, "Custom/Tutorial", are added in the scene, their materials are replaced with the duplicates of the material provided by the shader mod, Tutorial_Shader.zipmod. The value in each property in those materials are also transmitted to the duplicates.
 >
 > What have to be cautious are that:
-> - 
+> 
+> * When you update the shader mod, it means all the objects using this shader will be updated in the shader to the latest version when they are added in the scene, even if they have not updated their materials. So the effect provided by the shader mod and used in the objects could be always the newest, and you don't need to re-mod every other mod when your shader is updated.
+> * If you add some new properties in the shader mod, and the objects in other mods are not correspondingly updated, the newly added properties can be also shown on MaterialEditor tab of the objects and can function well, but their parameters could be default as set by the default value in the shader mod's manifest.xml file.
+> * If some properties have been changed in their names or been removed in the latest version of the shader mod, the objects that have not updated will not have the effect provided by those former properties.
+>
+> Also, MaterialEditor seems not sensitive to numbers in distinguishing names of the shaders. If you create two shader mods with shaders namely "Custom/Tutorial 1.0" and "Custom/Tutorial 2.0", MaterialEditor could not differentiate their version serials, and instead it would take them as the same shaders. Since MaterialEditor keeps the uniqueness of each shader, at most only one of these two shaders could be successfully loaded, leaving the rest not working. 
 
 ## Supplement
 ### Too many properties to add tags?
