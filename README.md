@@ -178,7 +178,7 @@ After installing this mod in the game, and loading the shader into an item such 
 
 > [!NOTE]
 >
-> The following content on batch replacing tags is a legecy, since [**MaterialEditor Tag Generator**](https://github.com/Blatke/MaterialEditor-Tag-Generator) has issued. This Generator, which is a script using in Unity Editor, can automatically generate MaterialEditor tags in a format of manifest tagging. 
+> The following content on batch replacing tags is a legacy, since [**MaterialEditor Tag Generator**](https://github.com/Blatke/MaterialEditor-Tag-Generator) has issued. This Generator, which is a script using in Unity Editor, can automatically generate MaterialEditor tags in a format of manifest tagging. 
 
 When you have tens of properties in a shader file, it's gonna be a nightmare for making each of them a tag to add in manifest.xml. If you use Visual Code or some other coding software that supports RegEx ([Regular Expression](https://en.wikipedia.org/wiki/Regular_expression)), you can do the following steps to batch convert the properties in a shader file into MaterialEditor-related tags:
 1. Copy the properties to a new file.
