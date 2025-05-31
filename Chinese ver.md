@@ -189,6 +189,10 @@ HS2中的着色器mod（Shader Mod）可以被理解为一种让其他mod提供�
 
 ### 要添加标签的属性太多？
 
+> [!NOTE]
+>
+> 以下关于批量替换标签的内容是旧的，因为[**MaterialEditor标签生成器**](https://github.com/Blatke/MaterialEditor-Tag-Generator)已经发布。此生成器是Unity Editor中使用的脚本，可以自动生成manifest格式的MaterialEditor标签。
+
 当.shader着色器文件中有数十个属性时，将每个属性都作为标签添加到manifest.xml中将会是一场噩梦。如果你使用Visual Code或其它支持正则表达式（[Regular Expression](https://en.wikipedia.org/wiki/Regular_expression)）的编码软件，你可以执行以下步骤，将着色器文件中的属性批量转换为MaterialEditor标签：
 
 1.将属性复制到一个新文件。
